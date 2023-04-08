@@ -1,0 +1,17 @@
+<html lang="en">
+  <%- include('./partials/header.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="music content">
+      <h2>Single Music Item:</h2>
+      <% if (theMusic.length > 0) var music = theMusic[0];{ %>
+      <h3>
+        <%= music.music_id %> <%= music.album_name %> <%= music.artist_name %>
+        <%= music.type %> <%= music.price %>
+      </h3>
+      <% } %>
+    </div>
+  </body>
+  <%- include('./partials/footer.ejs') %>
+  <link rel="stylesheet" href="/styles/styles.css" />
+</html>

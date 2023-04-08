@@ -1,0 +1,33 @@
+<html lang="en">
+    <%- include('./partials/header.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+        <div class="Music content">
+
+<div id="Music-json-pargraph">
+  <p>Press the button to view music as JSON.</p>
+</div>
+<div id="json-btn">
+<button id="musicJsonBtn">View Music as JSON</button>
+</div>
+
+<script>
+    document.getElementById("musicJsonBtn").addEventListener("click", async () => {
+      try {
+        const response = await fetch("/music/musicJson");
+        const musicJson = await response.json();
+        console.log(musicJson);
+        alert(`Here's the current JSON music data from the PostGres DB: \n ${JSON.stringify(musicJson)}`); 
+      } catch (err) {
+        console.error(err);
+        alert("Error fetching music data");
+      }
+    });
+  </script>
+        </div>
+    </body>
+
+</br>
+    <%- include('./partials/footer.ejs') %>
+    <link rel="stylesheet" href="/styles/styles.css">
+</html>
