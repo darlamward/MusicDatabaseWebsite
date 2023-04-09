@@ -44,7 +44,7 @@ router.post("/", async (req, res) => {
       req.body.type,
       req.body.price
     );
-    res.redirect("/music/");
+    res.redirect("/music");
   } catch {
     res.render("503");
   }
@@ -53,6 +53,7 @@ router.post("/", async (req, res) => {
 router.get("/:id/replace", async (req, res) => {
   if (DEBUG) console.log("music.Replace : " + req.params.id);
   res.render("musicPut.ejs", {
+    music_id: req.query.music_id,
     album_name: req.query.album_name,
     artist_name: req.query.artist_name,
     type: req.query.type,
@@ -63,6 +64,7 @@ router.get("/:id/replace", async (req, res) => {
 router.get("/:id/delete", async (req, res) => {
   if (DEBUG) console.log("music.Delete : " + req.params.id);
   res.render("musicDelete.ejs", {
+    music_id: req.query.music_id,
     album_name: req.query.album_name,
     artist_name: req.query.artist_name,
     type: req.query.type,
@@ -90,7 +92,7 @@ router.put("/:id", async (req, res) => {
       req.body.type,
       req.body.price
     );
-    res.redirect("/music/");
+    res.redirect("/music");
   } catch {
     res.render("503");
   }
@@ -101,12 +103,13 @@ router.patch("/:id", async (req, res) => {
   try {
     await musicDal.patchMusicuItem(
       req.params.id,
+      req.body.music_id,
       req.body.album_name,
       req.body.artist_name,
       req.body.type,
       req.body.price
     );
-    res.redirect("/music/");
+    res.redirect("/music");
   } catch {
     res.render("503");
   }
@@ -116,7 +119,7 @@ router.delete("/:id", async (req, res) => {
   if (DEBUG) console.log("music.DELETE: " + req.params.id);
   try {
     await musicDal.deleteMusicItem(req.params.id);
-    res.redirect("/music/");
+    res.redirect("/music");
   } catch {
     res.render("503");
   }

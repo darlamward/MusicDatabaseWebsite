@@ -1,65 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 body {
   height: 100%;
-  padding: 0 20px;
-  font-family: "Sedgwick Ave Display", cursive;
-  background-image: url("https://wallpaperaccess.com/full/8237462.jpg");
-  height: 50%;
+  padding: 20px;
+  color: black;
+  background: white;
+  /*font-family: "Sedgwick Ave Display", cursive;*/
+  font-family: "Space Grotesk", sans-serif;
+  background-image: url("https://st2.depositphotos.com/1433253/8300/i/600/depositphotos_83006614-stock-photo-music-notes-bright-funky-background.jpg");
+  height: 100%;
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .bg {
-  height: 50%;
+  height: 100%;
 }
 
 a:hover {
-  color: grey;
-}
-p,
-h1,
-h2,
-h3,
-a,
-ul {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  color: #f5f5f5;
+  color: B669C9;
 }
 
 nav {
-  display: flex;
+  display: fixed;
   justify-content: space-between;
   margin-bottom: 40px;
-
+  font-weight: bold;
   padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 3px solid #ddd;
   text-transform: uppercase;
 }
-nav ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-nav li {
-  list-style-type: none;
-  margin-left: 20px;
-}
-nav h1 {
-  font-size: 3em;
-}
-nav p,
 nav a {
-  color: #dcdcdc;
-  font-weight: 300;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-footer {
-  color: #777;
-  text-align: center;
-  margin: 80px auto 20px;
-}
+
 h2 {
   margin-bottom: 20px;
 }
@@ -147,7 +125,7 @@ textarea {
 
 .music-inputs {
   display: grid;
-  color: #f1f1f1;
+  color: black;
 }
 
 #json-btn {
@@ -186,31 +164,61 @@ textarea {
 }
 
 #post-btn {
-  margin-left: 20px;
-
-  background: #2e9404;
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  color: #fff;
   border: none;
-  border-radius: 4px;
-  box-shadow: 0 4px 6px rgb(0 0 0 / 20%);
-  transition: all 0.3s ease;
+  background-color: white;
+  padding: 20px;
+  width: 330px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ee4dcb;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all 0.5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#post-btn:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: 0.1s;
+}
+
+#post-btn:focus {
+  background-color: #e4cee0;
+}
+#music-list {
+  background-color: white;
+  opacity: 90%;
+  display: block;
+  color: white;
+  top: 136px;
+  right: 30px;
+  margin-left: 50x;
+  margin-right: 500px;
+  color: black;
+  border-radius: 10px;
 }
 
 #music-inputs {
-  display: grid;
-  grid-gap: 20px;
-  justify-items: center;
-  align-items: center;
+  background-image: linear-gradient(240deg, #b669c9, #e4cee0 48%, #ee4dcb);
   position: absolute;
-  top: 136px;
-  right: 5px;
+  text-align: center;
+  display: grid;
+  grid-gap: 5px;
+  min-height: 50vh;
+  align-items: center;
+  justify-content: center;
+  justify-items: left;
+  color: white;
+  top: 200px;
+  right: 30px;
+  margin-left: 50x;
+  margin-right: 100px;
   left: 60rem;
-  color: #f1f1f1;
+  color: black;
+  border-radius: 10px;
 }
 
 #new-item {
@@ -240,7 +248,10 @@ textarea {
 }
 
 footer {
-  color: #f1f1f1;
+  position: relative;
+  align-items: end;
+  bottom: 0px;
+  color: black;
 }
 .Music Content {
   color: #f1f1f1;

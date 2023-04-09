@@ -1,11 +1,51 @@
 <html lang="en">
     <%- include('./partials/header.ejs') %>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+        body {
+            height: 100%;
+            padding: 20px;
+            color: black;
+            background: white;
+            /*font-family: "Sedgwick Ave Display", cursive;*/
+            font-family: "Space Grotesk", sans-serif;
+            background-image: url("https://st2.depositphotos.com/1433253/8300/i/600/depositphotos_83006614-stock-photo-music-notes-bright-funky-background.jpg");
+            height: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+            .bg {
+            height: 100%;
+            }
+
+            a:hover {
+            color: B669C9;
+            }
+
+            nav {
+            display: fixed;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            font-weight: bold;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ddd;
+            text-transform: uppercase;
+            }
+            nav a {
+            margin-left: 10px;
+            margin-right: 10px;
+            }
+    </style>
     <body>
         <%- include('./partials/nav.ejs') %>
         <div class="create content">
             <form action="/music/<%= locals.theId %>?_method=PATCH" method="POST">
                 <label>Edit Music Item: </br>
-                    <input label='Music ID:' type="text" name="music_id" value="<%= locals.music_id %>" required>
+                    <!--<input label='Music ID:' type="text" name="music_id" value="<%= locals.music_id %>" required>-->
                     <input label='Album Name:' type="text" name="album_name" value="<%= locals.album_name %>" required>
                     <input label='Artist Name:' type="text" name="artist_name" value="<%= locals.artist_name %>" required>
                     <input label='Type:' type="text" name="type" value="<%= locals.type %>" required>
@@ -16,5 +56,5 @@
         </div>
     </body>
     <%- include('./partials/footer.ejs') %>
-    <link rel="stylesheet" href="/styles/styles.css">
+    <!--<link rel="stylesheet" href="styles.css" type="text/css">-->
 </html>

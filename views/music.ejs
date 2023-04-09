@@ -7,40 +7,39 @@
                <u> <b>Current Music Collection: </b></u>
             </br> 
         </br>
-            <% if (theMusic.length > 0) { %>
-                <% theMusic.forEach(music => { %>
-                    <b><%= music.music_id %><%=" - "%><%= music.album_name %><%="      "%><%= music.artist_name %><%="      "%><%= music.type %><%="      "%><%= music.price %></b>
-                    <a href="/music/<%=music.music_id%>/edit?album_name=<%=music.album_name%>&artist_name=<%music.artist_name%>&type=<%music.type%>&price=<%music.price%>">edit</a>
-                    <a href="/music/<%=music.music_id%>/delete?album_name=<%=music.album_name%>&artist_name=<%music.artist_name%>&type=<%music.type%>&price=<%music.price%>">delete</a>
-                    <a href="/music/<%=music.music_id%>/replace?album_name=<%=music.album_name%>&artist_name=<%music.artist_name%>&type=<%music.type%>&price=<%music.price%>">replace</a></br> 
-                    <% }) %>
-            <% } %>
-
+            <container id="music-list">
+                <% if (theMusic.length > 0) { %>
+                    <% theMusic.forEach(music => { %>
+                        <b><%= music.music_id %><%=" - "%><%= music.album_name %><%="      "%><%= music.artist_name %><%="      "%><%= music.type %><%="      "%><%= music.price %></b>
+                        <a href="/music/<%=music.music_id%>/edit?album_name=<%=music.album_name%>&artist_name=<%music.artist_name%>&type=<%music.type%>&price=<%music.price%>"><IMG SRC="https://icons.veryicon.com/png/o/miscellaneous/linear-small-icon/edit-246.png" alt="edit" height="20" width="20"></a>
+                        <a href="/music/<%=music.music_id%>/delete?album_name=<%=music.album_name%>&artist_name=<%music.artist_name%>&type=<%music.type%>&price=<%music.price%>"><IMG SRC="https://cdn-icons-png.flaticon.com/512/3221/3221803.png" alt="delete" height="20" width="20"></a>
+                        <a href="/music/<%=music.music_id%>/replace?album_name=<%=music.album_name%>&artist_name=<%music.artist_name%>&type=<%music.type%>&price=<%music.price%>"><IMG SRC="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/reload-512.png" alt="replace" height="20" width="20"></a></br> 
+                        <% }) %>
+                <% } %>
+            </container>
             <div id="music-inputs">
-            <u><label >Add New Music:</label></u>
-            
-
-            <label id="music_id">New Music ID:
-                <input type="text" id="music_id" name="music_id" value="<%= locals.music_id %>" required>
-            </label>
-            <label id="album-name">New Item Album Name:
-                <input type="text" id="album_name" name="album_name" value="<%= locals.album_name %>" required>
-            </label>
-            <label id="artist-name">New Item Artist Name:
-                <input type="text" id="artist_name" name="artist_name" value="<%= locals.artist_name %>" required>
-            </label>
-            <label id="type">New Item Type:
-                <input type="text" id="type" name="type" value="<%= locals.type %>" required>
-            </label>
-            <label id="price">New Item price:
-                <input type="text" id="price" name="price" value="<%= locals.price %>" required>
-            </label>
-            <button id="post-btn">POST</button>
+                <u><label >Add New Music:</label></u>
+                <label id="music_id">New Music ID:
+                    <input type="text" id="music_id" name="music_id" value="<%= locals.music_id %>" required>
+                </label>
+                <label id="album-name">New Item Album Name:
+                    <input type="text" id="album_name" name="album_name" value="<%= locals.album_name %>" required>
+                </label>
+                <label id="artist-name">New Item Artist Name:
+                    <input type="text" id="artist_name" name="artist_name" value="<%= locals.artist_name %>" required>
+                </label>
+                <label id="type">New Item Type:
+                    <input type="text" id="type" name="type" value="<%= locals.type %>" required>
+                </label>
+                <label id="price">New Item price:
+                    <input type="text" id="price" name="price" value="<%= locals.price %>" required>
+                </label>
+                <button id="post-btn">POST</button>
+            </div>
         </form>
-    </div>
         </div>
     </body>
 </br>
     <%- include('./partials/footer.ejs') %>
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </html>
