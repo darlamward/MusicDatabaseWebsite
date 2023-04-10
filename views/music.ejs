@@ -10,7 +10,7 @@
             <container id="music-list">
                 <% if (theMusic.length > 0) { %>
                     <% theMusic.forEach(music => { %>
-                        <b><%= music.music_id %><%=" - "%><%= music.album_name %><%="      "%><%= music.artist_name %><%="      "%><%= music.type %><%="      "%><%= music.price %></b>
+                        <b><%= music.music_id %><%=" - "%><%= music.album_name %><%=" --- "%><%= music.artist_name %><%=" --- "%><%= music.type %><%=" --- "%><%= music.price %></b>
                         <a href="/music/<%=music.music_id%>/edit?album_name=<%=music.album_name%>&artist_name=<%music.artist_name%>&type=<%music.type%>&price=<%music.price%>"><IMG SRC="https://icons.veryicon.com/png/o/miscellaneous/linear-small-icon/edit-246.png" alt="edit" height="20" width="20"></a>
                         <a href="/music/<%=music.music_id%>/delete?album_name=<%=music.album_name%>&artist_name=<%music.artist_name%>&type=<%music.type%>&price=<%music.price%>"><IMG SRC="https://cdn-icons-png.flaticon.com/512/3221/3221803.png" alt="delete" height="20" width="20"></a>
                         <a href="/music/<%=music.music_id%>/replace?album_name=<%=music.album_name%>&artist_name=<%music.artist_name%>&type=<%music.type%>&price=<%music.price%>"><IMG SRC="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/reload-512.png" alt="replace" height="20" width="20"></a></br> 
@@ -34,12 +34,12 @@
                 <label id="price">New Item price:
                     <input type="text" id="price" name="price" value="<%= locals.price %>" required>
                 </label>
-                <button id="post-btn">POST</button>
+                <button id="post-btn">POST</button> 
             </div>
         </form>
         </div>
     </body>
 </br>
     <%- include('./partials/footer.ejs') %>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </html>

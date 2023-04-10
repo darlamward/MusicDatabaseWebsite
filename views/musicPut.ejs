@@ -5,16 +5,18 @@
         <div class="create content">
             <form action="/music/<%= locals.theId %>?_method=PUT" method="POST">
                 <label>Replace Music Item: </br>
-                    <input label='Music ID:' type="text" name="music_id" value="<%= locals.music_id %>" required>
-                    <input label='Album Name:' type="text" name="album_name" value="<%= locals.album_name %>" required>
-                    <input label='Artist Name:' type="text" name="artist_name" value="<%= locals.artist_name %>" required>
-                    <input label='Type:' type="text" name="type" value="<%= locals.type %>" required>
-                    <input label='Price:' type="text" name="price" value="<%= locals.price %>" required>
+                    <!--Values aren't showing in inputs. Except for Album Name.-->
+                    <input placeholder="Music ID" label='Music ID:' type="text" name="music_id" value="<%= locals.music_id %>" required>
+                    <input placeholder="Album Name" label='Album Name:' type="text" name="album_name" value="<%= locals.album_name %>" required>
+                    <input placeholder="Artist Name"label='Artist Name:' type="text" name="artist_name" value="<%= locals.artist_name %>" required>
+                    <input placeholder="Type" label='Type:' type="text" name="type" value="<%= locals.type %>" required>
+                    <input placeholder="Price" label='Price:' type="text" name="price" value="<%= locals.price %>" required>
                 </label></br>
-                <button>PUT</button>
+                <button id="patch-btn">PUT</button>
+                <!--Put works but Patch doesn't? -->
             </form>
         </div>
     </body>
     <%- include('./partials/footer.ejs') %>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </html>
